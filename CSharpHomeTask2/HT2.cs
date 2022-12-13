@@ -33,14 +33,11 @@ namespace CSharpHomeTask2
         public static string First_non_repeating_letter(string s)
         {
             string solution = "";
-            //  string l = s.ToLower();
-            // string u = s.ToUpper();
-
+   
             Console.WriteLine(s);
-            //  char f;
+            
             for (int i = 0; i < s.Length; i++)
             {
-                // Console.WriteLine(s);
                 if ((s.IndexOf(s[i], s.IndexOf(s[i]) + 1) == -1))
                 {
                     solution = Char.ToString(s[i]);
