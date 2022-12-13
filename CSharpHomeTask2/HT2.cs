@@ -13,7 +13,7 @@ namespace CSharpHomeTask2
     public class HT2
     {
         [Test]
-        public void Test1_()
+        public void Test1_Uppercase()
         {
             string word = "STress";
             string expectedResult = "T";
@@ -22,7 +22,7 @@ namespace CSharpHomeTask2
             Assert.AreEqual(expectedResult, result);
         }
         [Test]
-        public void Test2_()
+        public void Test2_AllRepeting()
         {
             string word = "aabbvveeehh";
             string expectedResult = "" ;

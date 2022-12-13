@@ -14,10 +14,34 @@ Examples:
 
 It can happen that in two distinct families with the same family name two people have the same first name too.
 */
+using NUnit.Framework;
+
 namespace CSharpHomeTask5
 {
     public class HT5
     {
+        [Test]
+        public void Test1_BasicTest()
+        {
+            string list = "Abba:SingerB;Abba:SingerA;Cold:Play;Bonny:M;Facebok:Meta;Almond:Milk;Apple:Gate;Peach:Gate;Lucky:Jhon"
+            string expectedResult = "(GATE, APPLE)(GATE, PEACH)(JHON, LUCKY)(M, BONNY)(META, FACEBOK)(MILK, ALMOND)(SINGERA, ABBA)";
+            var result = SortingName(list);
 
+            Assert.AreEqual(expectedResult, result);
+        }
+        [Test]
+        public void Test2_EmptyList()
+        {
+            string list = " ";
+            string expectedResult = " ";
+            string result = SortingName(list);
+
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        public static string SortingName (string s)
+        {
+            return s;
+        }
     }
 }
