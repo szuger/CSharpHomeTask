@@ -34,6 +34,7 @@ namespace CSharpHomeTask3
 {
     public class HT3
     {
+ /* First solution:
         public int DigitalRoot(long n)
         {
             if (n == 0) return 0;
@@ -47,13 +48,13 @@ namespace CSharpHomeTask3
                 return Convert.ToInt32(n % 9);
             }
         }
-
+*/     
         [Test]
         public void Test1_ZeroNumber()
         {
             long number = 0;
             int expectedResult = 0;
-            int result = DigitalRoot(number);
+            int result = DigitalRoot2(number);
 
             Assert.AreEqual(expectedResult, result);
         }
@@ -62,7 +63,7 @@ namespace CSharpHomeTask3
         {
             long number = 123456789;
             int expectedResult = 9;
-            int result = DigitalRoot(number);
+            int result = DigitalRoot2(number);
 
             Assert.AreEqual(expectedResult, result);
         }
@@ -71,9 +72,23 @@ namespace CSharpHomeTask3
         {
             long number = 18485155155;
             int expectedResult = 3;
-            int result = DigitalRoot(number);
+            int result = DigitalRoot2(number);
 
             Assert.AreEqual(expectedResult, result);
         }
+        //Second solution:
+        public int DigitalRoot2(long n)
+        {
+            long result = 0;
+            if (n < 10) return (int)n;
+            while (n > 0)
+            {
+                result = result + (n % 10);
+                n = (n / 10);
+            }
+            return DigitalRoot2(result);
+        }
+
+
     }
 }

@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpHomeTask4", "CSharpHo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpHomeTask5", "CSharpHomeTask5\CSharpHomeTask5.csproj", "{A8B76633-2FFE-4128-9F2A-9B23B93DF553}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpHomeTask6", "CSharpHomeTask6\CSharpHomeTask6.csproj", "{E6795D89-9AD6-4D5A-B4C8-45487D1EC80F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHomeTask1", "CSharpHomeTask1\CSharpHomeTask1.csproj", "{CEEE1D9F-88D1-41E1-8313-5168033869F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpHomeTask1", "CSharpHomeTask1\CSharpHomeTask1.csproj", "{CEEE1D9F-88D1-41E1-8313-5168033869F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{A8B76633-2FFE-4128-9F2A-9B23B93DF553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8B76633-2FFE-4128-9F2A-9B23B93DF553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8B76633-2FFE-4128-9F2A-9B23B93DF553}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6795D89-9AD6-4D5A-B4C8-45487D1EC80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6795D89-9AD6-4D5A-B4C8-45487D1EC80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6795D89-9AD6-4D5A-B4C8-45487D1EC80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6795D89-9AD6-4D5A-B4C8-45487D1EC80F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CEEE1D9F-88D1-41E1-8313-5168033869F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEEE1D9F-88D1-41E1-8313-5168033869F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEEE1D9F-88D1-41E1-8313-5168033869F4}.Release|Any CPU.ActiveCfg = Release|Any CPU

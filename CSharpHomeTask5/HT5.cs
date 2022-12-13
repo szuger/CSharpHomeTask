@@ -14,7 +14,11 @@ Examples:
 
 It can happen that in two distinct families with the same family name two people have the same first name too.
 */
+using System;
+using System.Diagnostics;
+using System.Linq;
 using NUnit.Framework;
+
 
 namespace CSharpHomeTask5
 {
@@ -23,8 +27,8 @@ namespace CSharpHomeTask5
         [Test]
         public void Test1_BasicTest()
         {
-            string list = "Abba:SingerB;Abba:SingerA;Cold:Play;Bonny:M;Facebok:Meta;Almond:Milk;Apple:Gate;Peach:Gate;Lucky:Jhon"
-            string expectedResult = "(GATE, APPLE)(GATE, PEACH)(JHON, LUCKY)(M, BONNY)(META, FACEBOK)(MILK, ALMOND)(SINGERA, ABBA)";
+            string list = "Abba:SingerB;Abba:SingerA;Cold:Play;Bonny:M;Facebok:Meta;Almond:Milk;Apple:Gate;Peach:Gate;Lucky:Jhon";
+            string expectedResult = "(GATE, APPLE)(GATE, PEACH)(JHON, LUCKY)(M, BONNY)(META, FACEBOK)(MILK, ALMOND)(SINGERA, ABBA)(SINGERB, ABBA)";
             var result = SortingName(list);
 
             Assert.AreEqual(expectedResult, result);
@@ -38,9 +42,22 @@ namespace CSharpHomeTask5
 
             Assert.AreEqual(expectedResult, result);
         }
-
+        public class Person
+        {
+            public string firstName;
+            public string lastName;
+        }
         public static string SortingName (string s)
         {
+            char[] separators = new char[] { ';', ':' };
+            string[] subs = s.ToUpper().Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            IList<Person> personList = new List<Person>();
+            for (int i = 0; i < subs.Length - 1; i += 2)
+            {
+                personList.Add(new Person() { firstName = "("+subs[i+1]+", ", lastName = subs[i]+")" });
+            }
+            //Debug.WriteLine("anything");
+            var orderByName = personList.OrderBy(p => p.firstName).ThenBy(p => p.lastName).ToList();
             return s;
         }
     }
