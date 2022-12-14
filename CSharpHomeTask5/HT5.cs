@@ -28,7 +28,7 @@ namespace CSharpHomeTask5
         public void Test1_BasicTest()
         {
             string list = "Abba:SingerB;Abba:SingerA;Cold:Play;Bonny:M;Facebok:Meta;Almond:Milk;Apple:Gate;Peach:Gate;Lucky:Jhon";
-            string expectedResult = "(GATE, APPLE)(GATE, PEACH)(JHON, LUCKY)(M, BONNY)(META, FACEBOK)(MILK, ALMOND)(SINGERA, ABBA)(SINGERB, ABBA)";
+            string expectedResult = "(GATE, APPLE)(GATE, PEACH)(JHON, LUCKY)(M, BONNY)(META, FACEBOK)(MILK, ALMOND)(PLAY, COLD)(SINGERA, ABBA)(SINGERB, ABBA)";
             var result = SortingName(list);
 
             Assert.AreEqual(expectedResult, result);
