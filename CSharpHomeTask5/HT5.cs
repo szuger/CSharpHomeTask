@@ -36,8 +36,8 @@ namespace CSharpHomeTask5
         [Test]
         public void Test2_EmptyList()
         {
-            string list =" ";
-            string expectedResult = " ";
+            string list ="";
+            string expectedResult = "";
             string result = SortingName(list);
 
             Assert.AreEqual(expectedResult, result);
@@ -49,17 +49,14 @@ namespace CSharpHomeTask5
         }
         public static string SortingName (string s)
         {
-<<<<<<< HEAD
+
             string solution ="";
-=======
-            string solution= "";
->>>>>>> cac0c2977a5ddab6037fa3dcb23de75945802cfc
             char[] separators = new char[] { ';', ':' };
             string[] subs = s.ToUpper().Split(separators, StringSplitOptions.RemoveEmptyEntries);
             IList<Person> personList = new List<Person>();
             for (int i = 0; i < subs.Length - 1; i += 2)
             {
-<<<<<<< HEAD
+
                 personList.Add(new Person() { firstName = subs[i] + ")", lastName = "(" + subs[i + 1] + ", " });
             }
             var orderByName = personList.OrderBy(p => p.lastName).ThenBy(p => p.firstName).ToList();
@@ -67,15 +64,6 @@ namespace CSharpHomeTask5
             {
                 solution += pe.lastName + pe.firstName;
             }
-            Debug.WriteLine(solution);
-=======
-                personList.Add(new Person() { firstName = subs[i]+")", lastName ="("+subs[i+1]+", " });
-            }       
-            var orderByName = personList.OrderBy(p => p.lastName).ThenBy(p => p.firstName).ToList();
-            foreach (Person pe in orderByName){
-              solution += pe.lastName+pe.firstName;
-            }
->>>>>>> cac0c2977a5ddab6037fa3dcb23de75945802cfc
             return solution;
         }
     }
