@@ -58,7 +58,8 @@ namespace CSharpHomeTask5
             }
             //Debug.WriteLine("anything");
             var orderByName = personList.OrderBy(p => p.firstName).ThenBy(p => p.lastName).ToList();
-            return s;
+            string vmi= String.Join("Gergely", orderByName);
+            return vmi;
         }
     }
 }
