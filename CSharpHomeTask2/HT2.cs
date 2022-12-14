@@ -13,16 +13,16 @@ namespace CSharpHomeTask2
     public class HT2
     {
         [Test]
-        public void Test1_()
+        public void Test1_Uppercase()
         {
-            string word = "stress";
-            string expectedResult = "t";
+            string word = "STress";
+            string expectedResult = "T";
             string result = First_non_repeating_letter(word);
 
             Assert.AreEqual(expectedResult, result);
         }
         [Test]
-        public void Test2_()
+        public void Test2_AllRepeting()
         {
             string word = "aabbvveeehh";
             string expectedResult = "" ;
@@ -33,12 +33,12 @@ namespace CSharpHomeTask2
         public static string First_non_repeating_letter(string s)
         {
             string solution = "";
-   
+            string Lowstring  = s.ToLower();
             Console.WriteLine(s);
             
             for (int i = 0; i < s.Length; i++)
             {
-                if ((s.IndexOf(s[i], s.IndexOf(s[i]) + 1) == -1))
+                if ((Lowstring.IndexOf(Lowstring[i], Lowstring.IndexOf(Lowstring[i]) + 1) == -1))
                 {
                     solution = Char.ToString(s[i]);
 

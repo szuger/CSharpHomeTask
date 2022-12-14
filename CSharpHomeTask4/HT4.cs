@@ -23,28 +23,30 @@ namespace CSharpHomeTask4
         public static int SumPairInArray(int[] arr, int target)
         {
             int counter = 0, sum =0;
-            for (int i = 0; i < arr.Length-1; i++)
-            {
-                sum = arr[i] + arr[i+1];
-                if (sum == target) counter++;
+            for (int i = 0; i < arr.Length-1; i++){
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    sum = arr[i] + arr[j];
+                    if (sum == target) counter++;
+                }
             }
             return counter;
         }
         [Test]
-        public void Test1_Sum5()
+        public void Test1_Sum5T4()
         {
-            int[] arr = new int[] { 1, 4, 2, 3 };
+            int[] arr = new int[] { 1, 4, 2, 3, 6, 5, 0, 2 };
             int target = 5;
-            int expectedResult = 2;
+            int expectedResult = 4;
             int result = SumPairInArray(arr, target);
 
             Assert.AreEqual(expectedResult, result);
         }
         [Test]
-        public void Test2_Sum42()
+        public void Test2_Sum5T3()
         {
-            int[] arr = new int[] { 1,7, 172, 3, 42, 0, 17, 25, 2, 0, -1, 43 };
-            int target = 42;
+            int[] arr = new int[] { 1, 4, 5, 3, 0, 2, 6 };
+            int target = 5;
             int expectedResult = 3;
             int result = SumPairInArray(arr, target);
 
