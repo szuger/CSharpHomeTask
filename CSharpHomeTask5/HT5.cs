@@ -49,16 +49,19 @@ namespace CSharpHomeTask5
         }
         public static string SortingName (string s)
         {
+            string solution= "";
             char[] separators = new char[] { ';', ':' };
             string[] subs = s.ToUpper().Split(separators, StringSplitOptions.RemoveEmptyEntries);
             IList<Person> personList = new List<Person>();
             for (int i = 0; i < subs.Length - 1; i += 2)
             {
-                personList.Add(new Person() { firstName = "("+subs[i+1]+", ", lastName = subs[i]+")" });
+                personList.Add(new Person() { firstName = subs[i]+")", lastName ="("+subs[i+1]+", " });
+            }       
+            var orderByName = personList.OrderBy(p => p.lastName).ThenBy(p => p.firstName).ToList();
+            foreach (Person pe in orderByName){
+              solution += pe.lastName+pe.firstName;
             }
-            //Debug.WriteLine("anything");
-            var orderByName = personList.OrderBy(p => p.firstName).ThenBy(p => p.lastName).ToList();
-            return s;
+            return solution;
         }
     }
 }
